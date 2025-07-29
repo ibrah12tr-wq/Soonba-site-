@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOONBA AGRO- Agriculture Sous Serre High-Tech au Mali</title>
+    <meta name="description" content="Producteur de tomates sous serre high-tech au Mali. Agriculture durable et innovante avec des techniques hydroponiques avancées.">
+    
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation améliorée -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#accueil" class="flex items-center">
+                        <img src="img/soonba-agro-logo.png" alt="Logo SOONBA AGRO" class="h-10 w-auto mr-2">
+                        <span class="text-xl font-bold text-emerald-600">SOONBA AGRO</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="nav-link text-emerald-600">Accueil</a>
+                    <a href="#produits" class="nav-link">Nos Produits</a>
+                    <a href="#technologie" class="nav-link">Technologie</a>
+                    <div class="relative group">
+                        <a href="#a-propos" class="nav-link flex items-center">
+                            À Propos <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 hidden group-hover:block">
+                            <a href="#a-propos" class="block px-4 py-2 text-gray-800 hover:bg-emerald-50">Notre Histoire</a>
+                            <a href="#notre-difference" class="block px-4 py-2 text-gray-800 hover:bg-emerald-50">Notre Différence</a>
+                            <a href="#partenaires" class="block px-4 py-2 text-gray-800 hover:bg-emerald-50">Nos Partenaires</a>
+                            <a href="#faq" class="block px-4 py-2 text-gray-800 hover:bg-emerald-50">FAQs</a>
+                            <a href="#medias" class="block px-4 py-2 text-gray-800 hover:bg-emerald-50">Dans les Médias</a>
+                        </div>
+                    </div>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    
+                    <!-- Panier amélioré -->
+                    <div class="relative ml-4">
+                        <button id="cart-button" class="text-gray-600 hover:text-emerald-600 relative">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                            <span id="cart-count" class="absolute -top-2 -right-2 bg-emerald-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                        </button>
+                        
+                        <div id="cart-sidebar" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-between items-center p-6 border-b">
+                                    <h3 class="text-lg font-semibold">Mon Panier</h3>
+                                    <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="flex-grow p-6 overflow-y-auto" id="cart-items">
+                                    <p class="text-center text-gray-500 py-12">Votre panier est vide</p>
+                                </div>
+                                <div class="p-6 border-t">
+                                    <div class="flex justify-between mb-4">
+                                        <span class="font-medium">Total</span>
+                                        <span class="font-bold" id="cart-total">0 FCFA</span>
+                                    </div>
+                                    <button id="checkout-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-medium hover:scale-105 transition transform">
+                                        Passer la commande
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-emerald-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu mobile amélioré -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-4 space-y-1">
+                <a href="#accueil" class="mobile-nav-link block px-3 py-2 text-emerald-600">Accueil</a>
+                <a href="#produits" class="mobile-nav-link block px-3 py-2">Nos Produits</a>
+                <a href="#technologie" class="mobile-nav-link block px-3 py-2">Technologie</a>
+                <a href="#a-propos" class="mobile-nav-link block px-3 py-2">À Propos</a>
+                <div class="pl-4 space-y-1">
+                    <a href="#notre-difference" class="mobile-nav-link block px-3 py-2 text-sm">Notre Différence</a>
+                    <a href="#partenaires" class="mobile-nav-link block px-3 py-2 text-sm">Nos Partenaires</a>
+                    <a href="#faq" class="mobile-nav-link block px-3 py-2 text-sm">FAQs</a>
+                    <a href="#medias" class="mobile-nav-link block px-3 py-2 text-sm">Dans les Médias</a>
+                </div>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2">Contact</a>
+                
+                <div class="pt-4 border-t">
+                    <button id="mobile-cart-btn" class="w-full flex items-center justify-center px-4 py-2 text-gray-600 hover:text-emerald-600">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Panier <span id="mobile-cart-count" class="ml-1 bg-emerald-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero avec vidéo - Optimisée -->
+    <section id="accueil" class="pt-20 relative" style="min-height: 100vh;">
+        <video autoplay muted loop playsinline class="video-background" id="hero-video">
+            <source src="img/homepage_kwasizabantu_felbridge_website_edit_final.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+        <div class="video-overlay"></div>
+        
+        <div class="flex items-center justify-center" style="min-height: 100vh;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+                    L'Innovation Agricole <span class="text-emerald-300">au Mali</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto animate-fade-in delay-100">
+                    Des tomates savoureuses cultivées avec des technologies durables pour nourrir demain.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in delay-200">
+                    <a href="#produits" class="bg-white text-emerald-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg transition duration-300 transform hover:scale-105">
+                        Découvrir nos produits <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#technologie" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-600 px-6 py-3 rounded-md font-medium text-lg transition duration-300 transform hover:scale-105">
+                        Notre technologie
+                    </a>
+                </div>
+                
+                <div class="mt-12 animate-fade-in delay-300">
+                    <a href="#produits" class="inline-block animate-bounce">
+                        <i class="fas fa-chevron-down text-white text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Statistiques avec animation -->
+    <section id="stats" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="stats-card interactive-card bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-emerald-600 text-4xl mb-4">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2 counter" data-target="2">0</h3>
+                    <p class="text-gray-600">Variétés de tomates</p>
+                </div>
+                
+                <div class="stats-card interactive-card bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-emerald-600 text-4xl mb-4">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2 counter" data-target="365">0</h3>
+                    <p class="text-gray-600">Jours de production</p>
+                </div>
+                
+                <div class="stats-card interactive-card bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-emerald-600 text-4xl mb-4">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">
+                        <span class="counter" data-target="90">0</span>%
+                    </h3>
+                    <p class="text-gray-600">Quantité d'eau contrôlée pour la production</p>
+                </div>
+                
+                <div class="stats-card interactive-card bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-emerald-600 text-4xl mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2 counter" data-target="5">0</h3>
+                    <p class="text-gray-600">Nouvelles cultures en développement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produits améliorée -->
+    <section id="produits" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 animate-fade-in">Nos Produits Phares</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6 animate-fade-in delay-100"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in delay-200">
+                    Découvrez notre gamme de tomates cultivées avec des méthodes durables et innovantes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Produit 1 -->
+                <div class="product-card interactive-card bg-white rounded-xl overflow-hidden shadow-lg relative group">
+                    <div class="h-64 overflow-hidden">
+<img data-src="img/images (1).jpg" alt="Tomates Cerises" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 lazy-load">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tomates Cerises</h3>
+                        <p class="text-gray-600 mb-4">Petites mais pleines de saveur, parfaites pour les salades et apéritifs.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-emerald-600 font-bold text-lg price" data-price="3000">1400 FCFA / kg</span>
+                            <button class="add-to-cart bg-emerald-100 text-emerald-600 hover:bg-emerald-200 px-4 py-2 rounded-md font-medium transition duration-300 transform hover:scale-110"
+                                    data-product='{"name":"Tomates Cerises", "price":3000, "id":"tom-cerises"}'>
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center opacity-0 transition duration-300">
+                        <div class="text-center p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Tomates Cerises</h3>
+                            <ul class="text-left mb-4 text-sm space-y-2">
+                                <li><i class="fas fa-check-circle text-emerald-300 mr-2"></i> Variété sucrée et juteuse</li>
+                                <li><i class="fas fa-check-circle text-emerald-300 mr-2"></i> Récoltées à parfaite maturité</li>
+                                <li><i class="fas fa-check-circle text-emerald-300 mr-2"></i> Emballage écologique</li>
+                            </ul>
+                            <button class="view-details bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-md font-medium">
+                                Voir détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produit 2 -->
+                <div class="product-card interactive-card bg-white rounded-xl overflow-hidden shadow-lg relative group">
+                    <div class="h-64 overflow-hidden">
+<img data-src="img/Tomates_serre02.jpg" alt="Tomates Classiques" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 lazy-load">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tomates Classiques</h3>
+                        <p class="text-gray-600 mb-4">La tomate polyvalente pour toutes vos préparations culinaires.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-emerald-600 font-bold text-lg price" data-price="700">600 FCFA / kg</span>
+                            <button class="add-to-cart bg-emerald-100 text-emerald-600 hover:bg-emerald-200 px-4 py-2 rounded-md font-medium transition duration-300 transform hover:scale-110"
+                                    data-product='{"name":"Tomates Classiques", "price":700, "id":"tom-classiques"}'>
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center opacity-0 transition duration-300">
+                        <div class="text-center p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Tomates Classiques</h3>
+                            <ul class="text-left mb-4 text-sm space-y-2">
+                                <li><i class="fas fa-check-circle text-emerald-300 mr-2"></i> Chair ferme et savoureuse</li>
+                                <li><i class="fas fa-check-circle text-emerald-300 mr-2"></i> Parfaite pour les sauces et salades</li>
+                                <li><i class="fas fa-check-circle text-emerald-300 mr-2"></i> Conservation optimale</li>
+                            </ul>
+                            <button class="view-details bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-md font-medium">
+                                Voir détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Galerie des serres -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center mb-8">Visite de Nos Serres</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 gallery">
+<img data-src="img/serre-1.jpg" alt="Intérieur de serre" class="cursor-pointer rounded-lg hover:opacity-90 transition lazy-load">
+<img data-src="img/serre-2.jpg" alt="Plants de tomates" class="cursor-pointer rounded-lg hover:opacity-90 transition lazy-load">
+<img data-src="img/serre-3.jpg" alt="Système hydroponique" class="cursor-pointer rounded-lg hover:opacity-90 transition lazy-load">
+<img data-src="img/serre-4.jpg" alt="Récolte des tomates" class="cursor-pointer rounded-lg hover:opacity-90 transition lazy-load">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Technologie adaptée Mali -->
+    <section id="technologie" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Technologie Agricole Adaptée au Mali</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    À SOONBA AGRO, nous utilisons des techniques de culture en serre adaptées au climat de Siby, Mali, pour produire des tomates de haute qualité.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="bg-white p-8 rounded-xl shadow-lg zoom-on-hover">
+                        <div class="mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-sun text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Optimisation Climatique</h3>
+                                    <p class="text-gray-600">
+                                        Contrôle précis de la température et de l'humidité pour un environnement optimal de culture.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-seedling text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Culture Durable</h3>
+                                    <p class="text-gray-600">
+                                        Méthodes respectueuses de l'environnement pour minimiser l'impact écologique.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-start">
+                                <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-tools text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Technologie Avancée</h3>
+                                    <p class="text-gray-600">
+                                        Surveillance et amélioration de la croissance des plants grâce à des technologies modernes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg zoom-on-hover">
+                        <img data-src="img/technologie-mali.jpg" alt="Technologie Agricole Mali" class="w-full h-auto lazy-load">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-30"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Serres Modernes Adaptées</h3>
+                            <p>Infrastructure moderne utilisant des techniques adaptées pour une agriculture durable au Mali.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Diversification -->
+    <section id="diversification" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Notre Vision de Diversification</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Nous développons activement de nouvelles cultures pour répondre aux besoins du marché local.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="interactive-card bg-gray-50 p-6 rounded-xl shadow-md text-center h-full">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-pepper-hot text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Poivrons</h3>
+                    <p class="text-gray-600">Variétés colorées adaptées à notre système hydroponique.</p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">En test</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-6 rounded-xl shadow-md text-center h-full">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-apple-alt text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Fraises</h3>
+                    <p class="text-gray-600">Culture verticale pour une production intensive et écologique.</p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Phase pilote</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-6 rounded-xl shadow-md text-center h-full">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-spa text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Herbes Aromatiques</h3>
+                    <p class="text-gray-600">Basilic, menthe et coriandre cultivés sans pesticides.</p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Disponible bientôt</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-6 rounded-xl shadow-md text-center h-full">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Légumes Feuilles</h3>
+                    <p class="text-gray-600">Épinards et laitues à croissance rapide pour production continue.</p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">En développement</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-emerald-50 rounded-xl p-8 shadow-inner">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-2/3 mb-6 lg:mb-0 lg:pr-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Projet de Recherche: Microgreens</h3>
+                        <p class="text-gray-600 mb-4">
+                            Nous développons une unité de production de microgreens, ces jeunes pousses ultra-nutritives très prisées des chefs et nutritionnistes.
+                        </p>
+                        <p class="text-gray-600">
+                            Notre objectif: produire localement ces super-aliments avec une empreinte environnementale minimale.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/3">
+<img data-src="img/microgreens.jpg" alt="Microgreens" class="rounded-lg shadow-md w-full lazy-load">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sous-navigation À Propos -->
+    <div class="subnav sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex overflow-x-auto py-4 space-x-6">
+                <a href="#a-propos" class="subnav-link active whitespace-nowrap">Notre Histoire</a>
+                <a href="#notre-difference" class="subnav-link whitespace-nowrap">Notre Différence</a>
+                <a href="#partenaires" class="subnav-link whitespace-nowrap">Nos Partenaires</a>
+                <a href="#faq" class="subnav-link whitespace-nowrap">FAQs</a>
+                <a href="#medias" class="subnav-link whitespace-nowrap">Dans les Médias</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section À Propos - Notre Histoire -->
+    <section id="a-propos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Notre Histoire</h2>
+                    <p class="text-gray-600 mb-6">
+                        Fondée en 2025 par cinq jeunes étudiants passionnés, SOONBA AGRO est née de la conviction qu'une agriculture plus durable et productive était possible grâce à l'innovation technologique.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Ce qui a commencé comme une petite serre expérimentale est aujourd'hui devenu une référence dans l'agriculture sous serre high-tech au Mali, avec plus de 2 hectares de serres ultra-modernes.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        Notre mission: nourrir les populations locales avec des produits frais, savoureux et cultivés dans le respect de l'environnement.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <div class="bg-emerald-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-award text-emerald-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Prix de l'Innovation 2023</h4>
+                                <p class="text-gray-600 text-sm">Meilleure startup agricole</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <div class="bg-emerald-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-certificate text-emerald-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Certification Bio</h4>
+                                <p class="text-gray-600 text-sm">Agriculture durable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img data-src="assets/images/equipe-serre.jpg" alt="Équipe Serres Vertes" class="w-full h-auto lazy-load">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-30"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold">L'équipe fondatrice</h3>
+                            <p>Passionnée par l'agriculture innovante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section Équipe -->
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Rencontrez Notre Équipe</h3>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Des Professionnels passionnés qui mettent leur expertise au service de l'agriculture de demain.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Membre 1 -->
+                <div class="team-card interactive-card bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-emerald-100">
+                        <img data-src="img/IMG-20241209-WA0005.jpg" alt="OUMAR SIDIKI TRAORE" class="w-full h-full object-cover lazy-load">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">OUmar sidiki TRAORE</h3>
+                    <p class="text-emerald-600 font-medium mb-3">Responsable exploitation</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Ingénieur agronome avec 15 ans d'expérience dans l'agriculture innovante.
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:amadou@serresvertes.ml" aria-label="Email" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Membre 2 -->
+                <div class="team-card interactive-card bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-emerald-100">
+                        <img data-src="img/IMG-20241209-WA0006.jpg" alt="Béatrice Diop" class="w-full h-full object-cover lazy-load">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Béatrice Diop</h3>
+                    <p class="text-emerald-600 font-medium mb-3">Responsable financier</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Spécialiste en systèmes hydroponiques et gestion des serres automatisées.
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:aissata@serresvertes.ml" aria-label="Email" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Membre 3 -->
+                <div class="team-card interactive-card bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-emerald-100">
+                        <img data-src="img/IMG-20241209-WA0001.jpg" alt="Aïchatou DIARRA" class="w-full h-full object-cover lazy-load">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Aïchatou DIARRA</h3>
+                    <p class="text-emerald-600 font-medium mb-3">Responsable marketing et communication</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Expert en développement des marchés et relations clients.
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:moussa@serresvertes.ml" aria-label="Email" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Membre 4 -->
+                <div class="team-card interactive-card bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-emerald-100">
+<img data-src="img/team-4.jpg" alt="Fatoumata Bamba" class="w-full h-full object-cover lazy-load">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Nafissatou DOUCOURE</h3>
+                    <p class="text-emerald-600 font-medium mb-3">Gérante de l'entreprise</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Docteure en biologie végétale, spécialisée dans l'amélioration des cultures.
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:fatoumata@serresvertes.ml" aria-label="Email" class="text-gray-400 hover:text-emerald-600 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Notre Différence -->
+    <section id="notre-difference" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ce Qui Nous Distingue</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez les éléments clés qui font de Serres Vertes un acteur unique dans l'agriculture malienne.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-leaf text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Agriculture Durable</h3>
+                    <p class="text-gray-600">
+                        Nous combinons technologies modernes et pratiques écologiques pour minimiser notre impact environnemental tout en maximisant la productivité.
+                    </p>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-flask text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Innovation Continue</h3>
+                    <p class="text-gray-600">
+                        Notre laboratoire de R&D travaille en permanence à l'amélioration des variétés et des techniques de culture adaptées au contexte local.
+                    </p>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Qualité Supérieure</h3>
+                    <p class="text-gray-600">
+                        Des produits cultivés dans des conditions optimales, sans pesticides nocifs, pour une qualité nutritionnelle et gustative exceptionnelle.
+                    </p>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Impact Social</h3>
+                    <p class="text-gray-600">
+                        Nous créons des emplois locaux qualifiés et formons la prochaine génération d'agriculteurs high-tech au Mali.
+                    </p>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bolt text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Efficacité Énergétique</h3>
+                    <p class="text-gray-600">
+                        Nos serres utilisent des systèmes de récupération d'eau et d'énergie solaire pour une empreinte carbone minimale.
+                    </p>
+                </div>
+                
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-calendar-check text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Production Annuelle</h3>
+                    <p class="text-gray-600">
+                        Contrairement à l'agriculture traditionnelle, nous produisons toute l'année, garantissant une offre constante à nos clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Partenaires -->
+    <section id="partenaires" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nos Partenaires</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Nous collaborons avec des institutions et entreprises partageant notre vision d'une agriculture innovante et durable.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="interactive-card bg-white p-6 rounded-xl shadow-sm flex items-center justify-center h-32">
+                    <img data-src="https://ml.linkedin.com/company/bara-musso-officiel" alt="Partenaire 1" class="max-h-16 max-w-full object-contain lazy-load">
+                </div>
+                <div class="interactive-card bg-white p-6 rounded-xl shadow-sm flex items-center justify-center h-32">
+                    <img data-src="https://www.google.com/imgres?q=logo%20azalai%20hotel%20bamako&imgurl=https%3A%2F%2Flookaside.instagram.com%2Fseo%2Fgoogle_widget%2Fcrawler%2F%3Fmedia_id%3D3403951201365074506&imgrefurl=https%3A%2F%2Fwww.instagram.com%2Fp%2FC89Q5zPon62%2F&docid=XkcCLeVO81xLeM&tbnid=FP7edgzmSE6PIM&vet=12ahUKEwi7t9rg98GOAxXmU6QEHW45Jv8QM3oECA4QAA..i&w=1080&h=1080&hcb=2&ved=2ahUKEwi7t9rg98GOAxXmU6QEHW45Jv8QM3oECA4QAA" alt="Partenaire 2" class="max-h-16 max-w-full object-contain lazy-load">
+                </div>
+                <div class="interactive-card bg-white p-6 rounded-xl shadow-sm flex items-center justify-center h-32">
+                    <img data-src="assets/images/partenaire-3.png" alt="Partenaire 3" class="max-h-16 max-w-full object-contain lazy-load">
+                </div>
+                <div class="interactive-card bg-white p-6 rounded-xl shadow-sm flex items-center justify-center h-32">
+                    <img data-src="assets/images/partenaire-4.png" alt="Partenaire 4" class="max-h-16 max-w-full object-contain lazy-load">
+                </div>
+                <div class="interactive-card bg-white p-6 rounded-xl shadow-sm flex items-center justify-center h-32">
+                    <img data-src="assets/images/partenaire-5.png" alt="Partenaire 5" class="max-h-16 max-w-full object-contain lazy-load">
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Devenir Partenaire</h3>
+                <p class="text-gray-600 max-w-3xl mx-auto mb-8">
+                    Vous souhaitez collaborer avec nous pour développer l'agriculture innovante au Mali ? Nous sommes ouverts à différents types de partenariats.
+                </p>
+                <a href="#contact" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                    Contactez notre équipe partenariats
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Questions Fréquentes</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Trouvez des réponses aux questions les plus courantes sur nos produits et méthodes.
+                </p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="faq-item interactive-card bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-800">Comment vos tomates sont-elles cultivées sans pesticides ?</h3>
+                        <i class="fas fa-chevron-down text-emerald-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">
+                            Nous utilisons un système hydroponique en environnement contrôlé qui élimine le besoin de pesticides traditionnels. 
+                            La lutte intégrée contre les nuisibles se fait par introduction d'insectes bénéfiques et méthodes physiques de protection.
+                            De plus, notre système fermé empêche la contamination par des pathogènes extérieurs.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item interactive-card bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-800">Pourquoi vos produits sont-ils plus chers que ceux du marché traditionnel ?</h3>
+                        <i class="fas fa-chevron-down text-emerald-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">
+                            Nos prix reflètent la qualité supérieure et les coûts de production de nos méthodes innovantes :
+                        </p>
+                        <ul class="mt-2 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Technologies high-tech pour un contrôle optimal des conditions de croissance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Main-d'œuvre qualifiée et bien rémunérée</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Emballages écologiques et durables</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Qualité gustative et nutritionnelle constante</span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">
+                            À long terme, notre modèle devient plus économique grâce aux économies d'échelle et aux innovations continues.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item interactive-card bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-800">Où puis-je acheter vos produits ?</h3>
+                        <i class="fas fa-chevron-down text-emerald-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">
+                            Nos produits sont disponibles :
+                        </p>
+                        <ul class="mt-2 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-store text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Dans les supermarchés et épiceries fines de Bamako</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-shopping-bag text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Sur notre boutique en ligne (livraison disponible)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-utensils text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Dans les restaurants partenaires</span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">
+                            <a href="#contact" class="text-emerald-600 hover:underline">Contactez-nous</a> pour connaître le point de vente le plus proche de chez vous.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item interactive-card bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-800">Proposez-vous des visites de vos serres ?</h3>
+                        <i class="fas fa-chevron-down text-emerald-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">
+                            Oui, nous organisons des visites guidées de nos installations pour :
+                        </p>
+                        <ul class="mt-2 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-user-graduate text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Étudiants et chercheurs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-briefcase text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Professionnels du secteur agricole</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Groupes organisés (sur réservation)</span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">
+                            Les visites doivent être réservées à l'avance via notre <a href="#contact" class="text-emerald-600 hover:underline">formulaire de contact</a>.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item interactive-card bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-800">Quels sont vos projets d'expansion ?</h3>
+                        <i class="fas fa-chevron-down text-emerald-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">
+                            Notre plan de développement prévoit :
+                        </p>
+                        <ul class="mt-2 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>L'ouverture de deux nouveaux sites de production dans les régions de Sikasso et Ségou d'ici 2025</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-leaf text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Le développement de 10 nouvelles variétés de légumes adaptées au climat malien</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-graduation-cap text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Un centre de formation pour agriculteurs souhaitant adopter nos méthodes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-solar-panel text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Une autonomie énergétique complète grâce au solaire d'ici 2026</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-6">
+                    Vous ne trouvez pas réponse à votre question ?
+                </p>
+                <a href="#contact" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                    Contactez notre équipe
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Dans les Médias -->
+    <section id="medias" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Dans les Médias</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez ce que les médias disent de notre initiative innovante.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="interactive-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+<img data-src="img/media-1.jpg" alt="Article média" class="w-full h-full object-cover lazy-load">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Mali Tribune</span>
+                            <span class="mx-2">•</span>
+                            <span>15 Mars 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">SOONBA AGRO: La révolution agricole malienne</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Reportage exclusif sur cette startup qui redéfinit l'agriculture au Mali avec des méthodes high-tech tout en créant des emplois locaux.
+                        </p>
+                        <a href="#" class="text-emerald-600 hover:text-emerald-800 font-medium inline-flex items-center">
+                            Lire l'article <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="interactive-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+<img data-src="img/media-2.jpg" alt="Article média" class="w-full h-full object-cover lazy-load">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Afrique Innovation</span>
+                            <span class="mx-2">•</span>
+                            <span>2 Février 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Comment le Mali mise sur l'agritech pour son autonomie alimentaire</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Focus sur Soonba Agro, une startup malienne qui a réussi à mettre en place des serres vertes en ligne de fond et à monter une agence de marketing. C'est un comme exemple réussi d'application des nouvelles technologies à l'agriculture en contexte africain.
+                        </p>
+                        <a href="#" class="text-emerald-600 hover:text-emerald-800 font-medium inline-flex items-center">
+                            Lire l'article <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="interactive-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 overflow-hidden">
+<img data-src="img/media-3.jpg" alt="Article média" class="w-full h-full object-cover lazy-load">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>RFI Afrique</span>
+                            <span class="mx-2">•</span>
+                            <span>10 Décembre 2022</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Prix de l'Innovation Agricole: Le Mali à l'honneur</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            SOONBA AGRO, une startup malienne qui est en liste pour remporter le prestigieux prix de l'innovation agricole pour ses solutions durables et adaptées au climat sahélien.
+                        </p>
+                        <a href="#" class="text-emerald-600 hover:text-emerald-800 font-medium inline-flex items-center">
+                            Écouter le reportage <i class="fas fa-headphones ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="interactive-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-tv text-emerald-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Apparitions TV</h3>
+                            <ul class="space-y-4">
+                                <li>
+                                    <a href="#" class="flex items-start group">
+                                        <span class="bg-emerald-100 group-hover:bg-emerald-200 p-1 rounded-full mr-3 mt-1 flex-shrink-0">
+                                            <i class="fas fa-play text-emerald-600 text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-600 group-hover:text-emerald-600">
+                                            Interview sur ORTM - "Les entrepreneurs du Mali" (25/05/2023)
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-start group">
+                                        <span class="bg-emerald-100 group-hover:bg-emerald-200 p-1 rounded-full mr-3 mt-1 flex-shrink-0">
+                                            <i class="fas fa-play text-emerald-600 text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-600 group-hover:text-emerald-600">
+                                            Reportage sur Africable - "Innovations vertes" (12/03/2023)
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interactive-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-microphone text-emerald-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Interviews Radio</h3>
+                            <ul class="space-y-4">
+                                <li>
+                                    <a href="#" class="flex items-start group">
+                                        <span class="bg-emerald-100 group-hover:bg-emerald-200 p-1 rounded-full mr-3 mt-1 flex-shrink-0">
+                                            <i class="fas fa-headphones text-emerald-600 text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-600 group-hover:text-emerald-600">
+                                            Radio Klédu - "L'agriculture du futur" (08/04/2023)
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-start group">
+                                        <span class="bg-emerald-100 group-hover:bg-emerald-200 p-1 rounded-full mr-3 mt-1 flex-shrink-0">
+                                            <i class="fas fa-headphones text-emerald-600 text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-600 group-hover:text-emerald-600">
+                                            RFI - "Les solutions locales au défi alimentaire" (22/01/2023)
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-6">
+                    Vous êtes journaliste et souhaitez nous interviewer ou visiter nos installations ?
+                </p>
+                <a href="#contact" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                    Contact presse
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ils Parlent de Nous</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez ce que nos clients et partenaires disent de nos produits et services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Témoignage 1 -->
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-emerald-600 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Les tomates de SOONBA AGRO sont tout simplement les meilleures que j'ai jamais goûtées. Leur goût est incomparable et leur texture parfaite. Un must pour notre restaurant !"
+                    </p>
+                    <div class="flex items-center">
+<img data-src="img/client-1.jpg" alt="Aminata K." class="w-12 h-12 rounded-full mr-4 lazy-load">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Aminata K.</h4>
+                            <p class="text-gray-600 text-sm">Cheffe - Restaurant Le Baobab</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 2 -->
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-emerald-600 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "En tant que distributeur, je peux dire que les produits Serres Vertes sont toujours d'une qualité constante et se vendent très bien. Leur approche durable est un vrai plus."
+                    </p>
+                    <div class="flex items-center">
+<img data-src="img/client-2.jpg" alt="Boubacar T." class="w-12 h-12 rounded-full mr-4 lazy-load">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Boubacar T.</h4>
+                            <p class="text-gray-600 text-sm">Directeur - Marché de Bamako</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 3 -->
+                <div class="interactive-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-emerald-600 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "J'apprécie particulièrement leur engagement écologique. Des produits locaux, durables et délicieux, que demander de plus? Ma famille adore leurs tomates cerises !"
+                    </p>
+                    <div class="flex items-center">
+<img data-src="img/client-3.jpg" alt="Kadiatou S." class="w-12 h-12 rounded-full mr-4 lazy-load">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Kadiatou S.</h4>
+                            <p class="text-gray-600 text-sm">Consommatrice engagée</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter améliorée -->
+    <section class="py-16 bg-emerald-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Restez Informés</h2>
+            <p class="text-xl text-emerald-100 mb-8">
+                Abonnez-vous à notre newsletter pour recevoir nos actualités, offres spéciales et conseils d'utilisation de nos produits.
+            </p>
+            
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Votre email" required
+                       class="flex-grow px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-white text-gray-800">
+                <button type="submit" class="bg-white text-emerald-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition duration-300">
+                    S'abonner
+                </button>
+            </form>
+            
+            <p class="text-sm text-emerald-100 mt-4">
+                Nous respectons votre vie privée. Désabonnez-vous à tout moment.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Contact améliorée -->
+        <!-- Section Contact améliorée -->
+        <section id="contact" class="py-20 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contactez-Nous</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Une question, une demande particulière ? Notre équipe est à votre écoute.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet *</label>
+                            <input type="text" id="name" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email *</label>
+                            <input type="email" id="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Téléphone</label>
+                            <input type="tel" id="phone"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet *</label>
+                            <select id="subject" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                <option value="" disabled selected>Sélectionnez un sujet</option>
+                                <option value="commande">Commande de produits</option>
+                                <option value="partenariat">Demande de partenariat</option>
+                                <option value="visite">Visite de nos serres</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                            <textarea id="message" rows="5" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-md font-medium transition duration-300 w-full transform hover:scale-105">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Nos Coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-emerald-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">Adresse</h4>
+                                    <p class="text-gray-600">
+                                        Route de Koulikoro, KM 12<br>
+                                        Bamako, Mali
+                                    </p>
+                                    <a href="#map" class="text-emerald-600 hover:text-emerald-800 text-sm mt-1 inline-block">
+                                        Voir sur la carte <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-emerald-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">Téléphone</h4>
+                                    <p class="text-gray-600">
+                                        +223 90 01 14 14<br>
+                                        +223 90 01 15 15
+                                    </p>
+                                    <p class="text-gray-600 text-sm mt-1">
+                                        Lundi-Vendredi: 8h-18h<br>
+                                        Samedi: 9h-13h
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-emerald-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">Email</h4>
+                                    <p class="text-gray-600">
+                                        <a href="mailto:contact@serresvertes.ml" class="hover:text-emerald-600">contact@soonbaagro.ml</a><br>
+                                        <a href="mailto:commercial@serresvertes.ml" class="hover:text-emerald-600">commercial@soonbaagro.ml</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-emerald-100 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-store text-emerald-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">Points de vente</h4>
+                                    <p class="text-gray-600">
+                                        Retrouvez nos produits dans les principaux marchés de Bamako et sur notre boutique en ligne.
+                                    </p>
+                                    <a href="#" class="text-emerald-600 hover:text-emerald-800 text-sm mt-1 inline-block">
+                                        Voir les points de vente <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-medium text-gray-800 mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" aria-label="Facebook" class="bg-gray-200 hover:bg-emerald-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" aria-label="Instagram" class="bg-gray-200 hover:bg-emerald-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" aria-label="LinkedIn" class="bg-gray-200 hover:bg-emerald-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" aria-label="YouTube" class="bg-gray-200 hover:bg-emerald-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carte interactive -->
+    <div id="map" class="h-96 w-full bg-gray-100">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.715253203814!2d-7.9856909246871!3d12.65022031694405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe51e4ab22a5d8a5%3A0x4a7a8e1a8a1a8a1a!2sBamako%2C%20Mali!5e0!3m2!1sfr!2sfr!4v1623259067120!5m2!1sfr!2sfr" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="lazy-load"></iframe>
+    </div>
+
+    <!-- Footer amélioré -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-leaf text-emerald-500 mr-2"></i> SOONBA AGRO
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        L'agriculture du futur, aujourd'hui. Cultivons ensemble un avenir plus vert et plus savoureux.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Navigation</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#produits" class="text-gray-400 hover:text-white transition">Nos Produits</a></li>
+                        <li><a href="#technologie" class="text-gray-400 hover:text-white transition">Technologie</a></li>
+                        <li><a href="#a-propos" class="text-gray-400 hover:text-white transition">À Propos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Produits</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tomates Cerises</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tomates Rouges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Futures Cultures</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Points de vente</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Informations</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Conditions générales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Presse</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    © 2023 Soonba Agro. Tous droits réservés. Mali. Tous droits réservés.
+                </p>
+                <div>
+<img data-src="img/payment-methods.png" alt="Méthodes de paiement" class="h-8 lazy-load">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-emerald-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition duration-300 opacity-0 invisible transform hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bannière cookies -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="mb-4 md:mb-0 text-sm md:text-base">
+                Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre 
+                <a href="#" class="text-emerald-400 hover:underline">politique de cookies</a>.
+            </p>
+            <div class="flex space-x-3">
+                <button id="accept-cookies" class="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded text-sm md:text-base">
+                    Accepter
+                </button>
+                <button id="reject-cookies" class="bg-transparent border border-white hover:bg-gray-700 px-4 py-2 rounded text-sm md:text-base">
+                    Refuser
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <!-- Chatbot Widget -->
+<div id="chatbot-container" class="fixed bottom-6 right-6 z-50 hidden">
+    <div class="bg-white rounded-t-xl shadow-xl w-80 overflow-hidden">
+        <div class="bg-emerald-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold">Assistant Serres Vertes</h3>
+            <button id="close-chatbot" class="text-white hover:text-emerald-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chatbot-messages" class="h-64 p-4 overflow-y-auto bg-gray-50">
+            <div class="chatbot-message bot-message mb-3">
+                <div class="bg-emerald-100 text-gray-800 rounded-lg p-3 max-w-xs">
+                    Bonjour ! 👋 Comment puis-je vous aider aujourd'hui ?
+                </div>
+            </div>
+        </div>
+        <div class="p-3 border-t bg-white">
+            <input type="text" id="chatbot-input" placeholder="Tapez votre message..." 
+                   class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <button id="send-message" class="mt-2 bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700">
+                Envoyer
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Bouton d'ouverture du chatbot -->
+<button id="open-chatbot" class="fixed bottom-6 right-6 bg-emerald-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center z-40 hover:bg-emerald-700 transition">
+    <i class="fas fa-comment-dots text-xl"></i>
+</button>
+
+<script>
+    // Gestion du chatbot
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const openChatbot = document.getElementById('open-chatbot');
+        const closeChatbot = document.getElementById('close-chatbot');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const sendMessage = document.getElementById('send-message');
+        
+        // Ouvrir le chatbot
+        openChatbot.addEventListener('click', function() {
+            chatbotContainer.classList.remove('hidden');
+            this.classList.add('hidden');
+        });
+        
+        // Fermer le chatbot
+        closeChatbot.addEventListener('click', function() {
+            chatbotContainer.classList.add('hidden');
+            openChatbot.classList.remove('hidden');
+        });
+        
+        // Envoyer un message
+        function sendUserMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+            
+            // Ajouter le message de l'utilisateur
+            addMessage(message, 'user');
+            chatbotInput.value = '';
+            
+        // Réponse automatique du bot (améliorée avec images)
+        setTimeout(() => {
+            let response;
+            let imageUrl = null;
+            
+            if (message.toLowerCase().includes('bonjour') || message.toLowerCase().includes('salut')) {
+                response = "Bonjour ! Comment puis-je vous aider concernant nos serres ou nos produits ?";
+                imageUrl = "img/chatbot/hello.png";
+            } else if (message.toLowerCase().includes('produit') || message.toLowerCase().includes('tomate')) {
+                response = "Nous cultivons plusieurs variétés de tomates : cerises, rouges classiques et cocktail. Vous pouvez les découvrir dans la section 'Nos Produits'.";
+                imageUrl = "img/chatbot/tomatoes.jpg";
+            } else if (message.toLowerCase().includes('prix') || message.toLowerCase().includes('coût')) {
+                response = "Nos prix varient selon les produits : Tomates Cerises (3000 FCFA/kg), Tomates Rouges (700 FCFA/kg), Tomates Cocktail (1500 FCFA/kg).";
+                imageUrl = "img/chatbot/prices.png";
+            } else if (message.toLowerCase().includes('contact') || message.toLowerCase().includes('joindre')) {
+                response = "Vous pouvez nous contacter par téléphone au +223 20 23 45 67 ou par email à contact@serresvertes.ml. Plus d'infos dans la section 'Contact'.";
+                imageUrl = "img/chatbot/contact.png";
+            } else if (message.toLowerCase().includes('heure') || message.toLowerCase().includes('ouvert')) {
+                response = "Nous sommes ouverts du lundi au vendredi de 8h à 18h et le samedi de 9h à 13h.";
+                imageUrl = "img/chatbot/hours.png";
+            } else {
+                response = "Je n'ai pas bien compris votre demande. Pour plus d'informations, vous pouvez visiter notre site ou nous contacter directement.";
+                imageUrl = "img/chatbot/confused.png";
+            }
+            
+            addMessage(response, 'bot', imageUrl);
+        }, 1000);
+        }
+        
+         // Ajouter un message à la conversation
+         function addMessage(text, sender, imageUrl = null) {
+             const messageDiv = document.createElement('div');
+             messageDiv.className = `chatbot-message ${sender}-message mb-3 flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+             
+             const contentDiv = document.createElement('div');
+             contentDiv.className = `bg-${sender === 'user' ? 'emerald-600 text-white' : 'emerald-100 text-gray-800'} rounded-lg p-3 max-w-xs flex flex-col items-start space-y-2`;
+             
+             if (imageUrl) {
+                 const img = document.createElement('img');
+                 img.src = imageUrl;
+                 img.alt = 'Image';
+                 img.className = 'rounded-md max-w-full h-auto';
+                 contentDiv.appendChild(img);
+             }
+             
+             const textNode = document.createElement('div');
+             textNode.textContent = text;
+             contentDiv.appendChild(textNode);
+             
+             messageDiv.appendChild(contentDiv);
+             chatbotMessages.appendChild(messageDiv);
+             
+             // Faire défiler vers le bas
+             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+         }
+        
+        // Événements pour envoyer un message
+        sendMessage.addEventListener('click', sendUserMessage);
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendUserMessage();
+            }
+        });
+    });
+</script>
+</body>
+</html>
